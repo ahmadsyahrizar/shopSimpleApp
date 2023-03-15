@@ -10,11 +10,12 @@ class Product {
   }
 }
 
-//UI Constructor
+
+//UI 
 class UI {
   //Product template
   addProduct(product) {
-    const productList = document.getElementById("product-list"); // <== selector id
+    const productList = document.getElementById("product-list")
     const element = document.createElement("div"); // <= create div element
     //to input new html as a child of div element above;
     element.innerHTML = ` 
@@ -62,11 +63,13 @@ class UI {
 
 //DOM Events
 document.getElementById("product-form").addEventListener("submit", e => {
-  const name = document.getElementById("product-name").value,
-    price = document.getElementById("product-price").value,
-    year = document.getElementById("product-year").value;
+  const name = e.target['product name'].value;
+  const  price =  e.target['number'].value;
+  const  year =  e.target['product year'].value;
 
-  //Create a new Object Product
+  console.log({name, price, year})
+
+  // Create a new Object Product
   const product = new Product(name, price, year);
 
   //Create a new UI
@@ -78,6 +81,9 @@ document.getElementById("product-form").addEventListener("submit", e => {
   ui.showMessage("Product added successfully", "success");
 
   e.preventDefault();
+  // console.log({e})
+
+
 });
 
 //Delete product
