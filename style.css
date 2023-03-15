@@ -6,7 +6,7 @@ body{
 }
 
 .shopping {
-  background-image: url('./img/background-shopping.jpg');
+  background-image: url('./assets/background-shopping.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
