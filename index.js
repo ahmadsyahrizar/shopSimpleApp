@@ -1,4 +1,7 @@
 //Product Constructor
+/**
+ * here to create new Product
+ */
 class Product {
   constructor(name, price, year) {
     this.name = name;
@@ -11,9 +14,10 @@ class Product {
 class UI {
   //Product template
   addProduct(product) {
-    const productList = document.getElementById("product-list");
-    const element = document.createElement("div");
-    element.innerHTML = `
+    const productList = document.getElementById("product-list"); // <== selector id
+    const element = document.createElement("div"); // <= create div element
+    //to input new html as a child of div element above;
+    element.innerHTML = ` 
       <div class="card text-center mb-4">
         <div class="card-body">
           <h5><strong>${product.name}</strong></h5>
@@ -68,7 +72,7 @@ document.getElementById("product-form").addEventListener("submit", e => {
   //Create a new UI
   const ui = new UI();
 
-  //Save product
+  //Save product and then we reset ad
   ui.addProduct(product);
   ui.resetForm();
   ui.showMessage("Product added successfully", "success");
